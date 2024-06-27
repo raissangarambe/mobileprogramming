@@ -1,0 +1,100 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --track-widget-creation --device-id=E706EF43-3893-42C5-A603-581DA38DE942 --start-paused --dart-define=flutter.inspector.structuredErrors=true lib/main.dart
+
+## exception
+
+SocketException: SocketException: Write failed (OS Error: Broken pipe, errno = 32), port = 0
+
+```
+#0      _NativeSocket.write (dart:io-patch/socket_patch.dart:1246:34)
+#1      _RawSocket.write (dart:io-patch/socket_patch.dart:2004:15)
+#2      _Socket._write (dart:io-patch/socket_patch.dart:2481:18)
+#3      _SocketStreamConsumer.write (dart:io-patch/socket_patch.dart:2216:28)
+#4      _SocketStreamConsumer.addStream.<anonymous closure> (dart:io-patch/socket_patch.dart:2168:11)
+#5      _rootRunUnary (dart:async/zone.dart:1407:47)
+#6      _CustomZone.runUnary (dart:async/zone.dart:1308:19)
+#7      _CustomZone.runUnaryGuarded (dart:async/zone.dart:1217:7)
+#8      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:365:11)
+#9      _BufferingStreamSubscription._add (dart:async/stream_impl.dart:297:7)
+#10     _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:784:19)
+#11     _StreamController._add (dart:async/stream_controller.dart:658:7)
+#12     _StreamController.add (dart:async/stream_controller.dart:606:5)
+#13     _StreamSinkImpl.add (dart:io/io_sink.dart:154:17)
+#14     _IOSinkImpl.write (dart:io/io_sink.dart:287:5)
+#15     _Socket.write (dart:io-patch/socket_patch.dart:2314:36)
+#16     _StdSink._write (dart:io/stdio.dart:401:13)
+#17     _StdSink.writeln (dart:io/stdio.dart:419:5)
+#18     DefaultResidentCompiler._compile (package:flutter_tools/src/compile.dart:907:20)
+<asynchronous suspension>
+#19     _CompilationRequest.run (package:flutter_tools/src/compile.dart:396:24)
+<asynchronous suspension>
+#20     DefaultResidentCompiler._handleCompilationRequest (package:flutter_tools/src/compile.dart:782:9)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[!] Flutter (Channel stable, 3.22.2, on macOS 14.5 23F79 darwin-arm64, locale en-RW)
+    • Flutter version 3.22.2 on channel stable at /Users/raissangarambe/Desktop/AUCA/development/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 761747bfc5 (2 weeks ago), 2024-06-05 22:15:13 +0200
+    • Engine revision edd8546116
+    • Dart version 3.4.3
+    • DevTools version 2.34.3
+    ✗ Downloaded executables cannot execute on host.
+      See https://github.com/flutter/flutter/issues/6207 for more information.
+      Flutter requires the Rosetta translation environment on ARM Macs. Try running:
+        sudo softwareupdate --install-rosetta --agree-to-license
+
+    • If those were intentional, you can disregard the above warnings; however it is recommended to use "git" directly to perform update checks and upgrades.
+
+[!] Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    • Android SDK at /Users/raissangarambe/Library/Android/sdk
+    ✗ cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/macos#android-setup for more details.
+
+[!] Xcode - develop for iOS and macOS (Xcode 15.4)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 15F31d
+    ✗ CocoaPods not installed.
+        CocoaPods is used to retrieve the iOS and macOS platform side's plugin code that responds to your plugin usage on the Dart side.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/platform-plugins
+      To install see https://guides.cocoapods.org/using/getting-started.html#installation for instructions.
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2024.1)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 17.0.10+0-17.0.10b1087.21-11609105)
+
+[✓] VS Code (version 1.90.1)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension can be installed from:
+      🔨 https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+[✓] Connected device (4 available)
+    • iPhone 15 Pro (mobile)          • E706EF43-3893-42C5-A603-581DA38DE942 • ios            • com.apple.CoreSimulator.SimRuntime.iOS-17-5 (simulator)
+    • macOS (desktop)                 • macos                                • darwin-arm64   • macOS 14.5 23F79 darwin-arm64
+    • Mac Designed for iPad (desktop) • mac-designed-for-ipad                • darwin         • macOS 14.5 23F79 darwin-arm64
+    • Chrome (web)                    • chrome                               • web-javascript • Google Chrome 126.0.6478.63
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 3 categories.
+```
